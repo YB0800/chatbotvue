@@ -1,4 +1,4 @@
-function getBotResponse(input) {
+/*function getBotResponse(input) {
 
 
     // Simple responses
@@ -9,4 +9,4 @@ function getBotResponse(input) {
     } else {
         return "Essayez de demander autre chose!";
     }
-}
+}*/
