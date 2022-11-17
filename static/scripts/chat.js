@@ -1,4 +1,4 @@
-// Collapsible
+/*// Collapsible
 var coll = document.getElementsByClassName("collapsible");
 
 for (let i = 0; i < coll.length; i++) {
@@ -14,9 +14,9 @@ for (let i = 0; i < coll.length; i++) {
         }
 
     });
-}
+}*/
 
-function getTime() {
+/*function getTime() {
     let today = new Date();
     hours = today.getHours();
     minutes = today.getMinutes();
@@ -31,10 +31,10 @@ function getTime() {
 
     let time = hours + ":" + minutes;
     return time;
-}
+}*/
 
 // Gets the first message
-function firstBotMessage() {
+/*function firstBotMessage() {
     let firstMessage = "Avez-vous une question ?"
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
 
@@ -47,16 +47,16 @@ function firstBotMessage() {
 firstBotMessage();
 
 // Retrieves the response
-function getHardResponse(userText) {
+/*function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
     let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
     $("#chatbox").append(botHtml);
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
+}*/
 
 //Gets the text from the input box and processes it
-function getResponse() {
+/*function getResponse() {
     let userText = $("#textInput").val();
 
     if (userText == "") {
@@ -73,10 +73,10 @@ function getResponse() {
         getHardResponse(userText);
     }, 1000)
 
-}
+}*/
 
 // Handles sending text via button clicks
-function buttonSendText(sampleText) {
+/*function buttonSendText(sampleText) {
     let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
 
     $("#textInput").val("");
@@ -91,12 +91,12 @@ function buttonSendText(sampleText) {
 
 function sendButton() {
     getResponse();
-}
+}*/
 
 
 // Press enter to send a message
-$("#textInput").keypress(function (e) {
+/*$("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
     }
-});
+});*/
