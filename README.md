@@ -1,8 +1,7 @@
 # chatbotfront
 Projet SneakMe (MATEO, Yasmine, Evan)
 
-Projet chatbot à l'origine fait à l'aide de JQuery, maintenant transvasé en Vue.
-
+Projet chatbot à l'origine fait à l'aide de JQuery, maintenant passé en Vue.
 
 Projet revu en classe (Yasmine, Evan). 
 

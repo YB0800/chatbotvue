@@ -14,27 +14,27 @@
 </head>
 
 <body>
-    
+
     <!-- CHAT BAR BLOCK -->
     <div id="app" class="chat-bar-collapsible">
         <button id="chat-button" type="button" class="collapsible" @click="toggleChatbox">Chatbot Sneak Me
             <i id="chat-icon" class="fa fa-fw fa-comments-o"></i>
         </button>
-        
+
         <div class="content" :class="{active: isActive}">
             <div class="full-chat-block">
                 <!-- Message Container -->
                 <div class="outer-container">
                     <div class="chat-container">
-                        <!-- Messages --> 
+                        <!-- Messages -->
                         <div id="chatbox">
                             <h5 id="chat-timestamp"></h5>
                             <!--<p id="botStarterMessage" class="botText"><span>Chargement...</span></p>-->
                           <div v-for="(message, index) in conversation">
-                                <p v-if="index%2 == 0" class="userText"><span>  {{ message }} </span></p>
-                                
-                                <p v-else="" class="botText"><span> {{ message }} </span></p>
-                                   
+                                <p v-if="index%2 === 0" class="userText"><span>  {{ message }} </span></p>
+
+                                <p v-else class="botText"><span> {{ message }} </span></p>
+
                                 </p>
                             </div>
 
@@ -50,41 +50,29 @@
                             </div>
                         </div>
 
-                        <div id="chat-bar-bottom">
-                            <p></p>
-                        </div>
-
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
-
 </body>
 
 <!-- PARTIE VUE -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="static/scripts/responses.js"></script>
-<script src="static/scripts/chat.js"></script>
 <script src="https://unpkg.com/vue@3"></script>
 <script>
 
  function getTime () {
     let today = new Date();
-    hours = today.getHours();
-    minutes = today.getMinutes();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
 
     if (hours < 10) {
         hours = "0" + hours;
     }
-
     if (minutes < 10) {
         minutes = "0" + minutes;
     }
-
     let time = hours + ":" + minutes;
     return time;
 }
@@ -94,31 +82,31 @@
                 isActive: false,
                 msg: "",
                 conversation:[],
-
-            
             }
         },
         methods: {
             toggleChatbox: function() {
-                console.log(getTime())
+                // console.log(getTime())
                 this.isActive = !this.isActive
             },
             traitementMessage: function() {
-                console.log(this.msg)
-                if (this.msg=== "") {this.conversation.push("I love Code Palace!")}
-                if (this.msg!==""){this.conversation.push(this.msg)}
-                if (this.msg == "bonjour") {
-        {this.conversation.push("Bonjour, souhaitez-vous un renseignement sur l'un de nos produits ?")}
-    } else if (this.msg == "au revoir") {
-        this.conversation.push("A bientôt, bonne journée!")
-    } else {
-        this.conversation.push ("Essayez de demander autre chose!")
-    }}
-    }}
-    )
-            
-        
-    .mount('#app') 
+                // console.log(this.msg)
+                if (!this.msg) {
+                    this.conversation.push("I love Code Palace!")
+                } else {
+                    this.conversation.push(this.msg)
+                }
+
+                if (this.msg === "bonjour") {
+                    {this.conversation.push("Bonjour, souhaitez-vous un renseignement sur l'un de nos produits ?")}
+                } else if (this.msg === "au revoir") {
+                    this.conversation.push("A bientôt, bonne journée!")
+                } else {
+                    this.conversation.push ("Essayez de demander autre chose!")
+                }
+            }
+        }
+    }).mount('#app')
 
 </script>
 </html>
