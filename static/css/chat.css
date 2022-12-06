@@ -1,3 +1,19 @@
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+    position: fixed;
+}
+
+::-webkit-scrollbar-track-piece  {
+    background-color: #989b98;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 15;
+    background-color: #000000;
+    -webkit-border-radius: 1ex;
+}
+
 .chat-bar-collapsible {
     position: fixed;
     bottom: 0;
@@ -6,7 +22,7 @@
 }
 
 .collapsible {
-    background-color: rgb(82, 151, 255);
+    background-color: rgb(0, 0, 0);
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -15,7 +31,7 @@
     outline: none;
     font-size: 18px;
     border-radius: 10px 10px 0px 0px;
-    border: 3px solid white;
+    border: 3px solid #989b98;
     border-bottom: none;
 }
 
@@ -23,7 +39,8 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
+    background-color: #dbdbdb;
+    content-visibility: auto;
 }
 
 .active {
@@ -56,9 +73,6 @@
     hyphens: auto;
 }
 
-.chat-container::-webkit-scrollbar {
-    display: none;
-}
 
 .chat-bar-input-block {
     display: flex;
@@ -79,6 +93,16 @@
     width: 25%;
     float: right;
     font-size: 20px;
+}
+
+
+
+#chat-icon-envoie {
+    color: rgb(0 0 0) !important; /* Le important est mis pour passer un style particulier à l'icon*/
+    right: 30px;
+    position: relative;
+    height: 20px;
+    width: 20px;
 }
 
 #chat-icon:hover {
@@ -116,7 +140,7 @@
 .userText span {
     line-height: 1.5em;
     display: inline-block;
-    background: #5ca6fa;
+    background: #000000;
     padding: 10px;
     border-radius: 8px;
     border-bottom-right-radius: 2px;

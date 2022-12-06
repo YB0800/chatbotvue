@@ -34,18 +34,16 @@
                                 <p v-if="index%2 === 0" class="userText"><span>  {{ message }} </span></p>
 
                                 <p v-else class="botText"><span> {{ message }} </span></p>
-
-                                </p>
                             </div>
 
                         <!-- User input box -->
                         <div class="chat-bar-input-block" :class="{active: isActive}">
                             <div id="userInput">
                                 <input id="textInput" class="input-box" type="text" name="msg" v-model="msg"
-                                v-on:keyup.enter="traitementMessage" placeholder="Tapez 'Entrée' pour envoyer un message">
-                                <p></p>
+                                v-on:keyup.enter="traitementMessage" placeholder="Votre message ...">
+                            </br>
                             </div>
-                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                <i id="chat-icon-envoie" style="color: #333;" class="fa fa-fw fa-send"
                                  @click="traitementMessage"></i>
                             </div>
                         </div>
