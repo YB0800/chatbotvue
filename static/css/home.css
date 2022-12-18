@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -15,16 +14,9 @@ html {
 body {
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
     font-family: 'Poppins', sans-serif;
 }
+
 .navbar {
     display: flex;
     align-items: center;
