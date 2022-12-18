@@ -10,11 +10,41 @@
     <link rel="stylesheet" href="static/css/chat.css">
     <link rel="stylesheet" href="static/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 
 </head>
 
 <body>
-
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="/static/images/logo.png" width="125px">
+                </div>
+                <nav>
+                    <ul>
+                        <li> <a href="">Accueil</a></li>
+                        <li> <a href="">Produit</a></li>
+                        <li> <a href="">A propos</a></li>
+                        <li> <a href="">Contact</a></li>
+                        <li> <a href="">Compte</a></li>
+                    </ul>
+                </nav>
+                <img src="/static/images/cart.png" width="30px" height="30px">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Soon <br> A New Style!</h1>
+                    <p>SneakMe est un magasin de chaussures spécialisé dans les paires exclusives / éditions limitées</p>
+                    <a href="" class="btn">Explore Now &#8594; </a>
+                </div>
+                <div class="col-2">
+                    <img src="/static/images/paire.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- CHAT BAR BLOCK -->
     <div id="app" class="chat-bar-collapsible">
         <button id="chat-button" type="button" class="collapsible" @click="toggleChatbox">Chatbot Sneak Me
@@ -30,21 +60,21 @@
                         <div id="chatbox">
                             <h5 id="chat-timestamp"></h5>
                             <!--<p id="botStarterMessage" class="botText"><span>Chargement...</span></p>-->
-                          <div v-for="(message, index) in conversation">
-                                <p v-if="index%2 === 0" class="userText"><span>  {{ message }} </span></p>
+                            <div v-for="(message, index) in conversation">
+                                <p v-if="index%2 === 0" class="userText"><span> {{ message }} </span></p>
 
                                 <p v-else class="botText"><span> {{ message }} </span></p>
                             </div>
 
-                        <!-- User input box -->
-                        <div class="chat-bar-input-block" :class="{active: isActive}">
-                            <div id="userInput">
-                                <input id="textInput" class="input-box" type="text" name="msg" v-model="msg"
-                                v-on:keyup.enter="traitementMessage" placeholder="Votre message ...">
-                            </br>
-                            </div>
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block" :class="{active: isActive}">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg" v-model="msg"
+                                        v-on:keyup.enter="traitementMessage" placeholder="Votre message ...">
+                                    </br>
+                                </div>
                                 <i id="chat-icon-envoie" style="color: #333;" class="fa fa-fw fa-send"
-                                 @click="traitementMessage"></i>
+                                    @click="traitementMessage"></i>
                             </div>
                         </div>
 
@@ -60,34 +90,34 @@
 <script src="https://unpkg.com/vue@3"></script>
 <script>
 
- function getTime () {
-    let today = new Date();
-    let hours = today.getHours();
-    let minutes = today.getMinutes();
+    function getTime() {
+        let today = new Date();
+        let hours = today.getHours();
+        let minutes = today.getMinutes();
 
-    if (hours < 10) {
-        hours = "0" + hours;
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        let time = hours + ":" + minutes;
+        return time;
     }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    let time = hours + ":" + minutes;
-    return time;
-}
     Vue.createApp({
         data() {
             return {
                 isActive: false,
                 msg: "",
-                conversation:[],
+                conversation: [],
             }
         },
         methods: {
-            toggleChatbox: function() {
+            toggleChatbox: function () {
                 // console.log(getTime())
                 this.isActive = !this.isActive
             },
-            traitementMessage: function() {
+            traitementMessage: function () {
                 // console.log(this.msg)
                 if (!this.msg) {
                     this.conversation.push("I love Code Palace!")
@@ -96,15 +126,16 @@
                 }
 
                 if (this.msg === "bonjour") {
-                    {this.conversation.push("Bonjour, souhaitez-vous un renseignement sur l'un de nos produits ?")}
+                    { this.conversation.push("Bonjour, souhaitez-vous un renseignement sur l'un de nos produits ?") }
                 } else if (this.msg === "au revoir") {
                     this.conversation.push("A bientôt, bonne journée!")
                 } else {
-                    this.conversation.push ("Essayez de demander autre chose!")
+                    this.conversation.push("Essayez de demander autre chose!")
                 }
             }
         }
     }).mount('#app')
 
 </script>
+
 </html>
