@@ -50,9 +50,8 @@
 
     <!-- CHAT BAR BLOCK -->
     <div id="app" class="chat-bar-collapsible">
-        <button id="chat-button" type="button" class="collapsible" @click="toggleChatbox">Chatbot Sneak Me
-            <i id="chat-icon" class="fa fa-fw fa-comments-o"></i>
-        </button>
+        <button id="chat-bubble" type="button" class="collapsible" @click="toggleChatbox">
+            <i id="chat-icon" class="fa fa-fw fa-comments-o"></i></button>
 
         <div class="content" :class="{active: isActive}">
             <div class="full-chat-block">
