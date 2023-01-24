@@ -179,6 +179,7 @@
     border-bottom-left-radius: 2px;
     max-width: 80%;
     margin-left: 10px;
+    margin-bottom: 5%;
     animation: floatup .5s forwards
 }
 
