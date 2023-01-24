@@ -157,6 +157,7 @@
     padding: 10px;
     border-radius: 8px;
     border-bottom-right-radius: 2px;
+    margin-bottom: 5%;
     max-width: 80%;
     margin-right: 10px;
     animation: floatup .5s forwards
