@@ -16,9 +16,13 @@
 
 .chat-bar-collapsible {
     position: fixed;
-    bottom: 0;
-    right: 50px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+    border-bottom-right-radius: 8%;
+    border-bottom-left-radius: 8%;
+    bottom: 5%;
+    right: 8%;
 }
 
 .collapsible {
@@ -41,6 +45,10 @@
     transition: max-height 0.2s ease-out;
     background-color: #dbdbdb;
     content-visibility: auto;
+    border-top-left-radius: 7%;
+    border-top-right-radius: 7%;
+    border-bottom-left-radius: 7%;
+    border-bottom-right-radius: 7%;
 }
 
 .active {
@@ -97,8 +105,9 @@
     width: 100%;
     align-items: center;
     background-color: rgb(235, 235, 235);
-    border-radius: 10px 10px 0px 0px;
     padding: 10px 0px 10px 10px;
+    border-bottom-left-radius: 7%;
+    border-bottom-right-radius: 7%;
 }
 
 .chat-bar-icons {
