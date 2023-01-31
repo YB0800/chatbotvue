@@ -134,6 +134,11 @@
                 } else {
                     this.conversation.push("Essayez de demander autre chose!")
                 }
+                if (this.msg === "Avez-vous des nouveautés en stock ?") {
+                    { this.conversation.push("Oui, nous avons de nouveaux modèles de sneakers en stock. Vous pouvez les consulter sur notre site web ou visiter notre magasin pour les voir en personne.")}
+                } else {
+                    this.conversation.push()
+                }
             }
         }
     }).mount('#app')
